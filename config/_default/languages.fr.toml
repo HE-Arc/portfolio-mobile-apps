@@ -1,0 +1,81 @@
+languageCode = "fr"
+languageName = "Français"
+weight = 1
+
+title = "Applications Mobiles @ HE-Arc Ingénierie"
+
+[params]
+displayName = "FR"
+isoCode = "fr"
+rtl = false
+logo = "arc_square_logo.png"
+description = "Portfolio des projets réalisés dans le cadre du développement d’applications mobiles (Android natif et Flutter) à la Haute École Arc Ingénierie."
+dateFormat = "2006"
+
+[params.dev]
+name = "Créé par [@estradel](https://linktr.ee/estradel)"
+
+[params.disclaimer]
+showIcon = false
+cardColor = "#f2f2f2"
+text = '''
+**Développement d’applications mobiles comme support d’apprentissage**
+<br><br>
+Dans le cadre de leur formation en Informatique et Systèmes de Communication (ISC), les étudiants développent des applications mobiles complètes en utilisant des technologies modernes telles que **Kotlin (Android natif), Flutter**, ainsi que les capteurs natifs des smartphones (**gyroscope, caméra, Bluetooth**).
+<br><br>
+Les projets couvrent différents domaines : jeux interactifs, applications de santé, systèmes de communication, traitement de données et intégration d’API.
+<br><br>
+Les étudiants sont amenés à concevoir des architectures logicielles robustes (MVVM, gestion d’état, séparation des responsabilités) et à développer des applications proches de cas d’usage réels.
+<br><br>
+**Ce portfolio présente une sélection de projets réalisés dans le cadre du cours de développement mobile à la HE-Arc Ingénierie. Il ne reflète pas l’ensemble des activités de la formation.**
+'''
+
+[params.author]
+name = "Haute École Arc Ingénierie - Tous droits réservés"
+image = "arc_ing_logo.png"
+headline = "Haute École Arc Ingénierie"
+bio = "La Haute École Arc Ingénierie forme des ingénieurs capables de concevoir des applications mobiles modernes, performantes et adaptées aux besoins de l’industrie."
+# links = [
+#   { email = "mailto:hello@your_domain.com" },
+#   { link = "https://link-to-some-website.com/" },
+#   { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
+#   { apple = "https://www.apple.com" },
+#   { blogger = "https://username.blogspot.com/" },
+#   { codepen = "https://codepen.io/username" },
+#   { dev = "https://dev.to/username" },
+#   { discord = "https://discord.gg/invitecode" },
+#   { dribbble = "https://dribbble.com/username" },
+#   { facebook = "https://facebook.com/username" },
+#   { flickr = "https://www.flickr.com/photos/username/" },
+#   { foursquare = "https://foursquare.com/username" },
+#   { github = "https://github.com/username" },
+#   { gitlab = "https://gitlab.com/username" },
+#   { google = "https://www.google.com/" },
+#   { hashnode = "https://username.hashnode.dev" },
+#   { instagram = "https://instagram.com/username" },
+#   { keybase = "https://keybase.io/username" },
+#   { kickstarter = "https://www.kickstarter.com/profile/username" },
+#   { lastfm = "https://lastfm.com/user/username" },
+#   { linkedin = "https://linkedin.com/in/username" },
+#   { mastodon = "https://mastodon.instance/@username" },
+#   { medium = "https://medium.com/username" },
+#   { microsoft = "https://www.microsoft.com/" },
+#   { orcid = "https://orcid.org/userid" },
+#   { patreon = "https://www.patreon.com/username" },
+#   { pinterest = "https://pinterest.com/username" },
+#   { reddit = "https://reddit.com/user/username" },
+#   { researchgate = "https://www.researchgate.net/profile/username" },
+#   { slack = "https://workspace.url/team/userid" },
+#   { snapchat = "https://snapchat.com/add/username" },
+#   { soundcloud = "https://soundcloud.com/username" },
+#   { stack-overflow = "https://stackoverflow.com/users/userid/username" },
+#   { steam = "https://steamcommunity.com/profiles/userid" },
+#   { telegram = "https://t.me/username" },
+#   { tiktok = "https://tiktok.com/@username" },
+#   { tumblr = "https://username.tumblr.com" },
+#   { twitch = "https://twitch.tv/username" },
+#   { twitter = "https://twitter.com/username" },
+#   { whatsapp = "https://wa.me/phone-number" },
+#   { youtube = "https://youtube.com/username" },
+#   { ko-fi = "https://ko-fi.com/username" },
+# ]

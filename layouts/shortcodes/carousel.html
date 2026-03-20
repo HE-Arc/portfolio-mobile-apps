@@ -1,0 +1,90 @@
+{{- /*
+Usage:
+{{< carousel >}}
+gallery/0_login.png|Connexion
+gallery/0_register.png|Inscription
+{{< /carousel >}}
+*/ -}}
+
+{{- $id := printf "swiper-%d" now.UnixNano -}}
+{{- $raw := .Inner | replaceRE "\r\n" "\n" | replaceRE "\r" "\n" | strings.TrimSpace -}}
+{{- $lines := split $raw "\n" -}}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<div id="{{ $id }}" class="swiper my-8">
+  <div class="swiper-wrapper">
+
+    {{- range $lines -}}
+      {{- $line := strings.TrimSpace . -}}
+      {{- if and $line (not (hasPrefix $line "#")) -}}
+        {{- $parts := split $line "|" -}}
+        {{- $src := strings.TrimSpace (index $parts 0) -}}
+        {{- $caption := "" -}}
+        {{- if ge (len $parts) 2 -}}
+          {{- $caption = strings.TrimSpace (index $parts 1) -}}
+        {{- end -}}
+
+        {{- $img := $.Page.Resources.GetMatch $src -}}
+        {{- $url := "" -}}
+        {{- if $img -}}
+          {{- $url = $img.RelPermalink -}}
+        {{- else -}}
+          {{- $url = $src | relURL -}}
+        {{- end -}}
+
+        <div class="swiper-slide">
+          <figure class="m-0 flex flex-col items-center">
+            <img src="{{ $url }}" alt="{{ $caption }}" class="max-h-[520px] w-auto rounded-xl shadow-md" loading="lazy">
+            {{- if $caption -}}
+              <figcaption class="mt-3 text-sm opacity-80 text-center">{{ $caption }}</figcaption>
+            {{- end -}}
+          </figure>
+        </div>
+      {{- end -}}
+    {{- end -}}
+
+  </div>
+
+  <!-- Arrows -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- Dots -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  (function () {
+    const root = document.getElementById("{{ $id }}");
+    if (!root) return;
+
+    new Swiper(root, {
+      loop: false,
+      spaceBetween: 24,
+      slidesPerView: 1,
+      keyboard: { enabled: true },
+      navigation: {
+        nextEl: root.querySelector('.swiper-button-next'),
+        prevEl: root.querySelector('.swiper-button-prev'),
+      },
+      pagination: {
+        el: root.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
+  })();
+</script>
+
+<style>
+  #{{ $id }}.swiper { padding-bottom: 2.5rem; }
+  #{{ $id }} .swiper-button-next,
+  #{{ $id }} .swiper-button-prev { transform: scale(0.85); }
+  #{{ $id }} .swiper-pagination-bullet { opacity: 0.5; }
+  #{{ $id }} .swiper-pagination-bullet-active { opacity: 1; }
+</style>
